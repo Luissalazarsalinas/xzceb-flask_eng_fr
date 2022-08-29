@@ -25,7 +25,7 @@ def english_to_french(englishtext):
             text = englishtext, 
             model_id = "en-fr").get_result()
         
-        french_text = translate.get["translations"][0]["translation"] 
+        french_text = translate.get("translations")[0]["translation"] 
         return french_text
     except ApiException as aex:
         return aex.message 
@@ -37,7 +37,7 @@ def french_to_english(frenchtext):
         translate = LANGUAGE_TRANSLATOR.translate(
             text = frenchtext, 
             model_id = "fr-en").get_result()
-        english_text = translate.get["translations"][0]["translation"] 
+        english_text = translate.get("translations")[0]["translation"] 
         return english_text
     except ApiException as aex:
         return aex.message
